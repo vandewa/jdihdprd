@@ -248,9 +248,11 @@
                         <!-- Blog -->
                         <article class="row mb-7" data-aos="fade-up-right">
                             <div class="col-md-5">
-                                <img class="card-img hvr-bob"
-                                    src="https://setwan.wonosobokab.go.id/{{ 'storage' . str_replace('public', '', $list['sampul']['path']) }}"
-                                    alt="Image Description" style="height:100%;width:100%;object-fit:cover">
+                                <a href="{{ route('detail.berita', $list['id']) }}">
+                                    <img class="card-img hvr-bob"
+                                        src="https://setwan.wonosobokab.go.id/{{ 'storage' . str_replace('public', '', $list['sampul']['path']) }}"
+                                        alt="Image Description" style="height:100%;width:100%;object-fit:cover">
+                                </a>
                             </div>
                             <div class="col-md-7">
                                 <div class="card-body d-flex flex-column h-100 px-0">
