@@ -32,9 +32,7 @@ Route::post('/cari', [HomeController::class, 'cariHukum'])->name('cari.hukum');
 Route::post('/cari-detail', [HomeController::class, 'cariHukumDetail'])->name('cari.hukum.detail');
 // Route::get('/hukum/list', [HomeController::class, 'cariHukum'])->name('hukum.list');
 
-// Route::get('/news-list', [HomeController::class, 'listNews'])->name('news.list');
-// Route::get('/page/{id}', [HomeController::class, 'halaman'])->name('halaman');
-// Route::get('/organisasi/{id}', [HomeController::class, 'organisasi'])->name('organisasi');
+Route::get('/detail/berita/{id}', [HomeController::class, 'detailBerita'])->name('detail.berita');
 
 
 //dokumentasi template

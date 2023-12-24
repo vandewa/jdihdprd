@@ -1,7 +1,3 @@
-{{-- @section('title', 'Website Resmi Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu Wonosobo')
-@section('meta-description')
-    <meta content="Website Resmi Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu Wonosobo" name="description" />
-@endsection --}}
 @extends('layouts.front.app')
 @section('content')
     <main id="content" role="main">
@@ -68,7 +64,7 @@
                 <!-- End Title -->
 
                 <div class="row">
-                    <div class="col-lg-5 order-lg-2 mb-7 mb-lg-0">
+                    <div class="col-lg-5 order-lg-2 mb-7 mb-lg-0" data-aos="flip-up">
                         <!-- Nav -->
                         <ul class="nav nav-box" role="tablist">
                             <li class="nav-item w-100 mx-0 mb-3">
@@ -115,7 +111,7 @@
                         <!-- End Nav -->
                     </div>
 
-                    <div class="col-lg-7 order-lg-1 align-self-lg-end">
+                    <div class="col-lg-7 order-lg-1 align-self-lg-end" data-aos="flip-up">
                         <!-- Tab Content -->
                         <div class="tab-content pr-lg-4">
                             <div class="tab-pane fade show active" id="pills-one-code-features" role="tabpanel"
@@ -167,7 +163,7 @@
                             </div>
 
                             <div class="tab-pane fade" id="pills-two-code-features" role="tabpanel"
-                                aria-labelledby="pills-two-code-features-tab">
+                                aria-labelledby="pills-two-code-features-tab" data-aos="flip-up">
                                 <form class="js-validate card shadow-lg mb-4" novalidate="novalidate" method="post"
                                     action="{{ route('cari.hukum.detail') }}">
                                     @csrf
@@ -250,9 +246,9 @@
                 <div class="col-lg-8">
                     @foreach ($berita as $list)
                         <!-- Blog -->
-                        <article class="row mb-7">
+                        <article class="row mb-7" data-aos="fade-up-right">
                             <div class="col-md-5">
-                                <img class="card-img"
+                                <img class="card-img hvr-bob"
                                     src="https://setwan.wonosobokab.go.id/{{ 'storage' . str_replace('public', '', $list['sampul']['path']) }}"
                                     alt="Image Description" style="height:100%;width:100%;object-fit:cover">
                             </div>
@@ -262,7 +258,8 @@
                                         <a class="font-weight-bold"
                                             href="#">{{ $list['kategorinya']['nama_kategori'] }}</a>
                                     </span>
-                                    <h3><a class="text-inherit" href="blog-single-article.html">{{ $list['judul'] }}</a>
+                                    <h3><a class="text-inherit hvr-underline-reveal"
+                                            href="{{ route('detail.berita', $list['id']) }}">{{ $list['judul'] }}</a>
                                     </h3>
                                     {!! substr($list['isi_posting'], 0, 300) . '..' !!}
                                     <div class="media align-items-center mt-auto">
@@ -291,13 +288,13 @@
                 </div>
 
                 <div class="col-lg-3">
-                    <div class="mb-7">
+                    <div class="mb-7" data-aos="fade-up-left">
                         <div class="mb-3">
                             <h3>Jenis Peraturan </h3>
                             <div class="hr-divider hr-divider-style-1"></div>
                         </div>
                         @foreach ($hukum as $item)
-                            <li><a href="{{ route('page.hukum', $item->id ?? '') }}"><b
+                            <li><a href="{{ route('page.hukum', $item->id ?? '') }}" class="hvr-underline-from-center"><b
                                         style="color:black;">{{ $item->nama ?? '' }}</b>
                                     <span class="badge badge-success">
                                         {{ $item->produk_count ?? '' }}</span></a>
@@ -305,7 +302,7 @@
                         @endforeach
                     </div>
 
-                    <div class="mb-7">
+                    <div class="mb-7" data-aos="fade-up-left">
                         <div class="mb-3">
                             <h3>Polling</h3>
                             <div class="hr-divider hr-divider-style-1"></div>
@@ -369,7 +366,8 @@
                             "stickyOffsetTop": 40,
                             "stickyOffsetBottom": 20
                         }'>
-                        <div class="mb-7">
+
+                        <div class="mb-7" data-aos="fade-up-left">
                             <div class="mb-3">
                                 <h3>Tautan JDIH</h3>
                                 <div class="hr-divider hr-divider-style-1"></div>
@@ -386,7 +384,8 @@
                                                 alt="Image Description">
                                         </div>
                                         <div class="media-body">
-                                            <h4 class="h6 mb-0"><a class="text-inherit" href="{{ $item->link }}"
+                                            <h4 class="h6 mb-0"><a class="text-inherit hvr-underline-from-center"
+                                                    href="{{ $item->link }}"
                                                     target="_blank">{{ $item->nama ?? '' }}</a>
                                             </h4>
                                         </div>
@@ -398,7 +397,7 @@
 
                         </div>
 
-                        <div class="mb-7" id="bahasa">
+                        <div class="mb-7" id="bahasa" data-aos="fade-up-left">
                             <div class="mb-3">
                                 <h3>Pilihan Bahasa</h3>
                                 <div class="hr-divider hr-divider-style-1"></div>

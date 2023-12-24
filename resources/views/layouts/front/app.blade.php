@@ -20,9 +20,12 @@
     <link rel="stylesheet" href="{{ asset('front/assets/vendor/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/assets/vendor/slick-carousel/slick/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/vendor/aos/dist/aos.css') }}">
 
     <!-- CSS Front Template -->
     <link rel="stylesheet" href="{{ asset('front/assets/css/theme.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/hover-master/css/hover.css') }}">
+
 
     <script src="https://kit.fontawesome.com/bb9305debb.js" crossorigin="anonymous"></script>
     @vite([])
@@ -438,6 +441,7 @@
     <script src="{{ asset('front/assets/vendor/hs-sticky-block/dist/hs-sticky-block.min.js') }}"></script>
     <script src="{{ asset('front/assets/vendor/slick-carousel/slick/slick.js') }}"></script>
     <script src="{{ asset('front/assets/vendor/jquery-validation/dist/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('front/assets/vendor/aos/dist/aos.js') }}"></script>
 
     <!-- JS Front -->
     <script src="{{ asset('front/assets/js/theme.min.js') }}"></script>
@@ -533,7 +537,6 @@
             // =======================================================
             var header = new HSHeader($('#header')).init();
 
-
             // INITIALIZATION OF MEGA MENU
             // =======================================================
             var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
@@ -600,6 +603,14 @@
             $('.js-sticky-block').each(function() {
                 var stickyBlock = new HSStickyBlock($(this)).init();
             });
+
+            // INITIALIZATION OF AOS
+            // =======================================================
+            AOS.init({
+                duration: 650,
+                once: true
+            });
+
 
 
             // INITIALIZATION OF GO TO

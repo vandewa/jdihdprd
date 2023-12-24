@@ -76,6 +76,20 @@ class HomeController extends Controller
         return view('home.index', compact('berita', 'link', 'kategori', 'sampul'));
     }
 
+    public function detailBerita($id)
+    {
+        $response = Http::withoutVerifying()->get('https://setwan.wonosobokab.go.id/api/news/' . $id);
+        $response = $response->collect();
+
+        $data = $response['data'];
+
+        $link = LinkTerkait::all();
+        $kategori = Kategori::whereIn('id', [1, 2, 3, 4])->get();
+
+        return view('detail-berita', compact('data', 'link', 'kategori'));
+
+    }
+
     public function pageProfil()
     {
         $data = Profil::where('id', 1)->first();
