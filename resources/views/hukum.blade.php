@@ -56,7 +56,7 @@
             "order": [
                 [0, "desc"]
             ],
-            ajax: "{{ route('hukum.list') }}"
+            ajax: window.location.href,
             columns: [{
                     data: 'DT_RowIndex',
                     name: 'DT_RowIndex',

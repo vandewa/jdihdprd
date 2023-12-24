@@ -383,11 +383,16 @@
             <div class="text-center">
                 <!-- Logo -->
                 <a class="d-inline-flex align-items-center mb-2" href="index.html" aria-label="Front">
-                    <img class="brand" src="{{ asset('front/assets/svg/logos/logo-white.svg') }}" alt="Logo">
+                    <img class="brand" src="{{ asset('jdih-putih.png') }}" alt="Logo" style="width: 400px;">
                 </a>
                 <!-- End Logo -->
 
-                <p class="small text-white-70">© Front. 2020 Htmlstream. All rights reserved.</p>
+                <p class="small text-white-70">© <?php if (date('Y') == 2023) {
+                    echo '2023';
+                } else {
+                    echo '2023 - ' . date('Y');
+                }
+                ?> DPRD Kabupaten Wonosobo. All rights reserved.</p>
             </div>
         </div>
 
