@@ -1,0 +1,192 @@
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #e2edff;
+}
+
+#projects {
+  background-color: #e2edff;
+}
+
+section {
+  padding-top: 0rem;
+}
+
+/* My Keyboard Section */
+.keyboard-box {
+  position: relative;
+  top: 100px;
+  background-color: #0c6efd;
+  border-radius: 10px;
+  height: 100px;
+  transform-style: preserve-3d;
+}
+
+
+.keyboard-box1 {
+    position: relative;
+    border-radius: 20px;
+    background-image: url('/front/assets/images/sagon.png');
+    height: 70px;
+    transform-style: preserve-3d;
+    background-size: cover;
+    background-position: center center;
+}
+
+.keyboard-box2 {
+    position: relative;
+    border-radius: 20px;
+    background-image: url('/front/assets/images/megono.png');
+    height: 70px;
+    transform-style: preserve-3d;
+    background-size: cover;
+    background-position: center center;
+}
+
+.keyboard-box3 {
+    position: relative;
+    border-radius: 20px;
+    background-image: url('/front/assets/images/ongklok.png');
+    height: 70px;
+    transform-style: preserve-3d;
+    background-size: cover;
+    background-position: center center;
+}
+
+.keyboard-box4 {
+    position: relative;
+    border-radius: 20px;
+    background-image: url('/front/assets/images/carica.png');
+    height: 70px;
+    transform-style: preserve-3d;
+    background-size: cover;
+    background-position: center center;
+}
+
+.keyboard-box5 {
+    position: relative;
+    border-radius: 20px;
+    background-image: url('/front/assets/images/carica.png');
+    height: 70px;
+    transform-style: preserve-3d;
+    background-size: cover;
+    background-position: center center;
+}
+
+.keyboard-box::before {
+  /*content: 'MY';*/
+  position: fixed;
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  font-style: italic;
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.keyboard-box:hover::before {
+  opacity: 0.2;
+}
+
+.keyboard-box::after {
+  content: '';
+  position: absolute;
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  font-style: italic;
+  top: 150px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.keyboard-box:hover::after {
+  opacity: 0.2;
+}
+
+.keyboard-name {
+  position: absolute;
+  bottom: 0px;
+  width: 90%;
+  color: #fff;
+  text-align: center;
+  font-size: 0.7em;
+  opacity: 0;
+  transform: translate3d(0, 0, 50px);
+  transition: 0.5s;
+}
+
+.keyboard-box:hover .keyboard-name {
+  top: 20px;
+  opacity: 1;
+}
+
+.keyboard-detail-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate3d(-50%, 0, 100px);
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.keyboard-box:hover .keyboard-detail-button {
+  opacity: 1;
+  bottom: 0px;
+   font-size: 0.7em;
+}
+
+.keyboard-img {
+  position: absolute;
+  top: 52%;
+  left: 20%;
+  transform: translate3d(-50%, -52%, 80px);
+  max-width: 20%;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.keyboard-image {
+  position: relative;
+  top: 0%;
+  left: 50%;
+  transform: translate3d(-50%, -52%, 80px);
+  max-width: 150px;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.keyboard-tulisan {
+    position: absolute;
+    top: 52%;
+    left: 42%;
+    transform: translate3d(-50%, -52%, 80px);
+    max-width: 20%;
+    transition: 0.5s;
+    z-index: 2;
+    color: #fff;
+    font-size: 1em;
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+}
+
+.keyboard-tulisan1 {
+    position: absolute;
+    top: 52%;
+    left: 45%;
+    transform: translate3d(-50%, -52%, 80px);
+    max-width: 30%;
+    transition: 0.5s;
+    z-index: 2;
+    color: #fff;
+    font-size: 1.1em;
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+}
+
+.keyboard-box:hover .keyboard-img {
+  transform: translate3d(-50%, -52%, 100px) rotate(5deg) scale(1.2);
+}
