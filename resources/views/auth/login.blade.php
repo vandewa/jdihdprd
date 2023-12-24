@@ -3,7 +3,7 @@
 
 <head>
     <!-- Title -->
-    <title>Login Simple | Front - Responsive Website Template</title>
+    <title>Login JDIH Kab. Wonosobo</title>
 
     <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
