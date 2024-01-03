@@ -114,6 +114,6 @@ class PollingController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Polling::destroy($id);
     }
 }

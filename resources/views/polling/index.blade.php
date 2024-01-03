@@ -61,7 +61,8 @@
                     name: 'polling.code_nm',
                     orderable: false,
                     searchable: false,
-                    className: "text-left"
+                    className: "text-left",
+                    defaultContent: '-'
                 },
                 {
                     data: 'tanggal',

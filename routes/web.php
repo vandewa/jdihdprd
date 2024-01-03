@@ -33,6 +33,8 @@ Route::post('/cari-detail', [HomeController::class, 'cariHukumDetail'])->name('c
 // Route::get('/hukum/list', [HomeController::class, 'cariHukum'])->name('hukum.list');
 
 Route::get('/detail/berita/{id}', [HomeController::class, 'detailBerita'])->name('detail.berita');
+Route::resource('polling', PollingController::class);
+
 
 
 //dokumentasi template
@@ -57,7 +59,6 @@ Route::middleware([
     Route::post('sampul', [InformasiUmumController::class, 'storeSampul'])->name('sampul.post');
     Route::resource('produk-hukum', ProdukHukumController::class);
     Route::resource('link-terkait', LinkTerkaitController::class);
-    Route::resource('polling', PollingController::class);
     Route::resource('kategori', KategoriController::class);
     Route::resource('monografi', MonografiHukumController::class);
     Route::resource('profil', ProfilController::class);

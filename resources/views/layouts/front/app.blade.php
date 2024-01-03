@@ -476,7 +476,7 @@
     <script>
         $(document).ready(function() {
             responsiveVoice.speak(
-                "Selamat datang di website Resmi DPMPTSP Kabupaten Wonosobo",
+                "Selamat datang di website Resmi jaringan dokumentasi dan informasi hukum sekretariat dprd Wonosobo",
                 "Indonesian Female", {
                     pitch: 1,
                     rate: 1,
