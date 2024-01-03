@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Polling;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\Auth;
 use hisorange\BrowserDetect\Parser as Browser;
 
 class PollingController extends Controller
@@ -14,27 +15,31 @@ class PollingController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->ajax()) {
+        if (Auth::check()) {
+            if ($request->ajax()) {
 
-            $data = Polling::with('polling')->select('*');
+                $data = Polling::with('polling')->select('*');
 
-            return DataTables::of($data)
-                ->addIndexColumn()
-                ->addColumn('action', function ($data) {
-                    return
-                        '<div class="list-icons">
+                return DataTables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function ($data) {
+                        return
+                            '<div class="list-icons">
                         <a href="' . route('polling.destroy', $data->id) . '" class="btn btn-outline-danger rounded-round delete-data-table"><i class="fas fa-trash mr-2"></i>Hapus</a>
                     </div>';
-                })
-                ->addColumn('tanggal', function ($data) {
-                    return \Carbon\Carbon::parse($data->created_at)->isoFormat('LLLL');
-                    ;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
-        }
+                    })
+                    ->addColumn('tanggal', function ($data) {
+                        return \Carbon\Carbon::parse($data->created_at)->isoFormat('LLLL');
+                        ;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+            }
 
-        return view('polling.index');
+            return view('polling.index');
+        } else {
+            abort(403);
+        }
     }
 
     /**
