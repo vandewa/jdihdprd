@@ -125,7 +125,7 @@ class HomeController extends Controller
                     $actionBtn =
                         '<div>
                                 <a href="' . route('detail.hukum', $data->id) . '" class="btn btn-info px-3 radius-30" target="_blank"><i class="far fa-eye"></i></a>
-                                <a href="' . route('page.hukum', $data->id) . '" class="btn btn-success px-3 radius-30" target="_blank"><i class="fas fa-cloud-download-alt"></i></a>
+                                <a href="' . $path . '" class="btn btn-success px-3 radius-30" target="_blank"><i class="fas fa-cloud-download-alt"></i></a>
                             </div>';
                     return $actionBtn;
                 })
@@ -164,10 +164,11 @@ class HomeController extends Controller
                 })
                 ->addColumn('action', function ($data) {
                     $path = asset('storage' . str_replace('public', '', $data->path));
+                    // route('page.hukum', $data->id)
                     $actionBtn =
                         '<div>
                                 <a href="' . route('detail.hukum', $data->id) . '" class="btn btn-info px-3 radius-30" target="_blank"><i class="far fa-eye"></i></a>
-                                <a href="' . route('page.hukum', $data->id) . '" class="btn btn-success px-3 radius-30" target="_blank"><i class="fas fa-cloud-download-alt"></i></a>
+                                <a href="' . $path . '" class="btn btn-success px-3 radius-30" target="_blank"><i class="fas fa-cloud-download-alt"></i></a>
                             </div>';
                     return $actionBtn;
                 })
