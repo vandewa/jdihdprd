@@ -28,8 +28,8 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/page/profil', [HomeController::class, 'pageProfil'])->name('page.profil');
 Route::get('/page/hukum/{id}', [HomeController::class, 'pageHukum'])->name('page.hukum');
 Route::get('/detail/hukum/{id}', [HomeController::class, 'detailHukum'])->name('detail.hukum');
-Route::post('/cari', [HomeController::class, 'cariHukum'])->name('cari.hukum');
-Route::post('/cari-detail', [HomeController::class, 'cariHukumDetail'])->name('cari.hukum.detail');
+Route::get('/cari', [HomeController::class, 'cariHukum'])->name('cari.hukum');
+Route::get('/cari-detail', [HomeController::class, 'cariHukumDetail'])->name('cari.hukum.detail');
 // Route::get('/hukum/list', [HomeController::class, 'cariHukum'])->name('hukum.list');
 
 Route::get('/detail/berita/{id}', [HomeController::class, 'detailBerita'])->name('detail.berita');

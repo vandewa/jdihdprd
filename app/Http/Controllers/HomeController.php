@@ -104,9 +104,15 @@ class HomeController extends Controller
 
         if ($request->ajax()) {
 
-            $data = ProdukHukum::with('kategori')->where('kategori_id', $request->kategori_id)
-                ->where('tentang', 'LIKE', '%' . $request->kunci . '%')
-                ->select('*');
+            $data = ProdukHukum::with('kategori');
+
+            if ($request->filled('kategori_id')) {
+                $data->where('kategori_id', $request->kategori_id)
+                    ->where('tentang', 'LIKE', '%' . $request->kunci . '%');
+
+            }
+
+            $data = $data->select('*');
 
             return DataTables::of($data)
                 ->addIndexColumn()
@@ -135,14 +141,19 @@ class HomeController extends Controller
     public function cariHukumDetail(Request $request)
     {
 
+        if (!$request->filled('kategori_id')) {
+            return redirect()->back();
+        }
+
         $judul = ProdukHukum::with('kategori')->where('kategori_id', $request->kategori_id)->first()->kategori->nama ?? '';
 
         if ($request->ajax()) {
 
-            $data = ProdukHukum::with('kategori')->where('kategori_id', $request->kategori_id)
+            $data = ProdukHukum::with('kategori')
+                ->where('kategori_id', $request->kategori_id)
                 ->where('nomor', $request->nomor)
                 ->where('tahun', $request->tahun)
-                ->where('tentang', 'LIKE', '%' . $request->tentang . '%')
+                ->where('tentang', 'LIKE', "%$request->tentang%")
                 ->select('*');
 
             return DataTables::of($data)

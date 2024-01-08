@@ -116,9 +116,8 @@
                         <div class="tab-content pr-lg-4">
                             <div class="tab-pane fade show active" id="pills-one-code-features" role="tabpanel"
                                 aria-labelledby="pills-one-code-features-tab">
-                                <form class="js-validate card shadow-lg mb-4" novalidate="novalidate" method="post"
+                                <form class="js-validate card shadow-lg mb-4" novalidate="novalidate" method="get"
                                     action="{{ route('cari.hukum') }}">
-                                    @csrf
                                     <div class="card-header border-0 bg-light text-center py-4 px-4 px-md-6">
                                         <h2 class="h4 mb-0">Pencarian</h2>
                                     </div>
@@ -164,9 +163,8 @@
 
                             <div class="tab-pane fade" id="pills-two-code-features" role="tabpanel"
                                 aria-labelledby="pills-two-code-features-tab" data-aos="flip-up">
-                                <form class="js-validate card shadow-lg mb-4" novalidate="novalidate" method="post"
+                                <form class="js-validate card shadow-lg mb-4" novalidate="novalidate" method="get"
                                     action="{{ route('cari.hukum.detail') }}">
-                                    @csrf
                                     <div class="card-header border-0 bg-light text-center py-4 px-4 px-md-6">
                                         <h2 class="h4 mb-0">Pencarian Spesifik</h2>
                                     </div>
